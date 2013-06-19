@@ -1,0 +1,38 @@
+{% load cyyfilter %}
+{% for atc in result_article  %}
+<div class="block photo article">                    
+	<div class="side">
+		<div class="day">
+			<a href="/detail/{{ atc.pk }}/">{{ atc.date_time.day|one_two}}</a>
+		</div>
+		<div class="month">
+			<a href="/detail/{{ atc.pk }}/">{{ atc.date_time.month|one_two}}</a>
+		</div>
+	</div>                    
+	<div class="main">
+		<div class="content">                           
+			{% if atc.pic_addr %}
+				<div class="img">
+					<a href="/pic/?source={{ atc.pic_addr.url }}/"><img src="{{ atc.pic_addr.url }}"></a>
+				</div>
+			{% endif %}
+			<div class="text">
+				{{ atc.content|safe }}
+			</div>
+		</div>               
+		{% if atc.tags %}	
+			<div class="tag">
+				{% for tag in atc.tags|tag_split %}
+					<a href="/get_tag/{{ tag }}/">{{ tag }}</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+		{% if not pos%}
+		<div class="link">
+			<a href="/detail/{{ atc.pk }}">评论(1)</a>
+			<a href="/detail/{{ atc.pk }}/">全文链接</a>
+		</div>
+		{% endif %}
+	</div>
+</div>	
+{% endfor %}

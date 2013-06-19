@@ -1,0 +1,11 @@
+a, a:hover, .day{color:#828d95;}
+.sidelist li a, .tag a, .active{background-color:#828d95;}
+.day{ border-color:#828d95;}
+.text blockquote{ border-left-color:#828d95;}
+body{background-color:#dfdfe1;}
+body{background-image:url("./p/5629503932259639055.png");}
+body{background-attachment:fixed;}
+.notes .action{width:500px;}
+#comment_frame{width:530px;}
+.video object,.video embed{width:530px;height:441px;}
+

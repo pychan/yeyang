@@ -1,0 +1,68 @@
+<div class="block">
+	<div class="main comment">
+		<h3 class="nctitle">评论</h3>
+			<div class="bcmt">
+			<div style="" class="bcmtadd">
+			<div class="bcmtipt s-bd0 s-bg0">
+				<div class="bcmtiptc"><span id="tellwho" style="display:none"></span><a href="#" id="xxx" style="display:none;margin-left:10px">x</a><textarea maxlength="200" class="s-fc0 ztag"></textarea></div>
+			</div>
+			<div class="bcmtbtn">
+				<button id="msgcommit" class="s-bd1 s-fc1 s-bg1 ztag">发布</button>
+				{% for atc in result_article %}
+				<input value="{{ atc.pk }}" id="whichatc" style="display:none">
+				{% endfor %}
+				<div class="txt s-fc0"></div>
+			</div>
+			</div>
+			<label id="helpnik"></label>
+			<input id="nikename" placeholder="选择一个昵称：必须" type="text" style="border:1px solid;height:20px">
+			<label id="helpemail"></label>
+			<input id="check_email" placeholder="您的邮箱：可选"  type="text" style="border:1px solid;height:20px">
+			
+			<script>
+				$(document).ready(function(){
+						$("textarea").val("");
+					//$("#msgcommit").click(function(){
+						//{"from_addr":$.trim($("#nikename").val()),"to_addr":$("#tellwho").text(),"msg":$.trim($("textarea").val())}
+					//	alert($("#tellwho").text());
+				//	});	
+					$(".user").click(function(){
+						$("#tellwho").text("@" + $(this).text()).show();	
+						$("#xxx").show();
+						//$("textarea").val("@" + $(this).text() + ":\n");	
+						return false;
+					});
+					
+					$("#xxx").click(function(){
+						$("#tellwho").text("").hide();
+						$(this).hide();
+						return false;	
+					});
+
+					$("#msgcommit").click(function(){
+						//alert($("#tellwho").text());
+						if($.trim($("#nikename").val()) == "" || $.trim($("textarea").val()) == ""){
+							
+							//$("#helpnik").text("Can't be null");
+							alert("昵称或信息不能为空的");
+						}else{
+							//here to do ajax post
+						//	alert('yes');
+							var len = $("#tellwho").text().length;
+							$.post('/post_msg/',{"atc_pk":$("#whichatc").val(),"from_addr":$.trim($("#nikename").val()),"to_addr":$("#tellwho").text().substring(1,len),"msg":$.trim($("textarea").val())},callback);
+						}
+					});
+					
+					function callback(data){
+						location.reload();
+						//alert("yes");
+						//var p = "<li class='note reblog chen'>"+"<a href='#' class='user'>"+ $.trim($("#nikename").val()) +"</a>"+ "<a href='#' class='user'>"+ $("#tellwhoe").text() +"</a>" +"</li>"; 
+						//$(".chen:last").append(p);	
+						//alert(d.status);
+					}
+				});				
+			</script>
+
+		</div>
+	</div>
+</div>  

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>好萌好软好可爱</title>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="/static/pic/1616.jpg">
+<link href="/static/css/page.css" rel="stylesheet" type="text/css" />
+{% block style %}{% endblock %}
+<link href="/static/css/back.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+{% include "head.html" %}
+{% block content %}{% endblock %}
+{% include "foot.html" %}
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

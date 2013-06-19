@@ -1,0 +1,49 @@
+<div class="block">
+	<div class="main comment">
+		<h3 class="nctitle">评论</h3>
+			<div class="bcmt">
+				<div style="" class="bcmtadd">
+			<div class="bcmtipt s-bd0 s-bg0">
+				<div class="bcmtiptc"><textarea maxlength="200" class="s-fc0 ztag"></textarea></div>
+			</div>
+			<div class="bcmtbtn">
+				<button class="s-bd1 s-fc1 s-bg1 ztag">发布</button>
+				<div class="txt s-fc0"></div>
+			</div>
+			</div>
+			<div class="bcmtlst">
+				<ul class="clearfix ztag"></ul>
+			</div>
+			<div style="display: none;" class="bcmtmore s-bd2 ztag">
+				<div class="bcmtlsta"><span class="s-fc4">正在载入中...</span></div>
+			</div>
+			<div style="display:none;" class="bcmtmore s-bd2">
+				<div class="bcmtlsta"><a class="s-fc2 ztag" href="#">查看更多</a></div>
+			</div>
+
+			<form class="form-horizontal">
+			    <fieldset>
+				    <div id="legend" class="">
+				        <legend class="">表单名</legend>
+					        </div>
+				    <div class="control-group">
+				          <!-- Text input-->
+			            <label class="control-label" for="input01">Text input</label>
+					          <div class="controls">
+			              <input placeholder="placeholder" class="input-xlarge" type="text">
+				              <p class="help-block">Supporting help text</p>
+			            </div>
+				        </div><div class="control-group">
+					          <!-- Text input-->
+			            <label class="control-label" for="input01">Text input</label>
+				          <div class="controls">
+			              <input placeholder="placeholder" class="input-xlarge" type="text">
+				             <p class="help-block">Supporting help text</p>
+			            </div>
+			        </div>
+			    </fieldset>
+     		  </form>
+
+		</div>
+	</div>
+</div>  

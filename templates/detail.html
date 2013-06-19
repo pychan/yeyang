@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block style %}
+<link href="/static/css/msg.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block content %}
+<div class="postwrapper box wid700">
+{% include "content.html" %}
+{% include "msgbox.html" %}
+{% include "comment.html" %}
+</div>
+{% endblock %}
