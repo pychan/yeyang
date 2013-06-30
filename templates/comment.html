@@ -1,6 +1,8 @@
 <div class="block">
     <div class="main comment">
-    	<h3 class="nctitle">热度(1347)</h3>
+		{% for article in result_article %}
+    	<h3 class="nctitle">热度({{ article.comment_count }})</h3>
+		{% endfor %}
 		<ol class="notes">
 
 		{% for comment in result_comment %}

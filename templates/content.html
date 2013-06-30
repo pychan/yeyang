@@ -29,7 +29,7 @@
 		{% endif %}
 		{% if not pos%}
 		<div class="link">
-			<a href="/detail/{{ atc.pk }}">评论(1)</a>
+			<a href="/detail/{{ atc.pk }}/">评论({{ atc.comment_count }})</a>
 			<a href="/detail/{{ atc.pk }}/">全文链接</a>
 		</div>
 		{% endif %}

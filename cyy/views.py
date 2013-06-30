@@ -51,7 +51,9 @@ def post_msg(request):
 		msg 		= request.POST.get('msg',None)	
 		atc_pk		= request.POST.get('atc_pk',None)
 		C = Comment(article=Article.objects.get(pk=atc_pk),msg=msg,from_addr=from_addr,to_addr=to_addr)
-		if C.save():
+		A = Article.objects.get(pk=atc_pk)
+		A.comment_count += 1
+		if C.save() and A.save():
 			#d={'from_addr':from_addr,"to_addr":to_addr,"msg":msg}
 			d={'status':'success'}
 			return HttpResponse(json.dump(d))
