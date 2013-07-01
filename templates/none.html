@@ -1,48 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>好萌好软好可爱</title>
-<link rel="shortcut icon" href="/static/pic/1616.jpg">
-<meta name="Keywords" content="好萌好软好可爱"/>
-<meta name="Description" content="好萌好软好可爱 - "/>
-<link href='/static/css/page.css' rel="stylesheet" type="text/css" />
-<style>
-a, a:hover, .day{color:#828d95;}
-.sidelist li a, .tag a, .active{background-color:#828d95;}
-.day{ border-color:#828d95;}
-.text blockquote{ border-left-color:#828d95;}
-body{background-color:#dfdfe1;}
-body{background-image:url("/static/pic/p/5629503932259639055.png");}
-body{background-attachment:fixed;}
-.notes .action{width:500px;}
-#comment_frame{width:530px;}
-.video object,.video embed{width:530px;height:441px;}
-</style>
-</head>
-<body>
-<div class="h95"></div>
-<div class="box wid700  "> 
-    <div class="selfinfo">  
-        	<div class="logo">
-                <a href="#"><img src="/static/pic/9696.jpg"><i></i></a>
-            </div>
-        	<h1><a href="#">好萌好软好可爱</a></h1>
-            <div class="text"></div>        
-    </div>
-    <div class="sch">
-        <form action="/search" method="get">
-            <input value="搜索" type="text" name="q" onFocus="if(this.value=='搜索'){this.value='';}" onBlur="if(this.value==''){this.value='搜索';}" class="txt"/>
-        </form>
-    </div>
-    <ul class="sidelist">
-        <li><a href="#" class="list_1" title="RSS"></a></li>
-        <li><a href="#" class="list_2" title="归档"></a></li>
-		<li><a href="#" rel="nofollow" class="list_4" title="私信"></a></li>
-    </ul>
+{% extends "base.html" %}
+{% block content %}
+<div class="postwrapper box wid700">       
+		<center>没有结果！</center>
 </div>
-	<div class="postwrapper box wid700  " style="display: none;">       
-	</div>
-	<div class="footer"><span title="Copyright" style="cursor:pointer;">?</span>&nbsp;<a href="#">好萌好软好可爱</a>&nbsp;|&nbsp;Powered by <a href="#">LOFTER</a></div>
-</body>
-</html>
+{% endblock %}

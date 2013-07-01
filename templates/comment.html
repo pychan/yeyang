@@ -7,12 +7,7 @@
 
 		{% for comment in result_comment %}
 			<li class="note reblog chen">
-
-				<!--
-				<a href="http://someonesite.com" title="someone - 5分钟前"><img class="avatar" src="png_16x16x0.jpg"></a>
-				<span class="action">
-				-->
-				<a href="#" title="someone - 5分钟前" class="user">{{ comment.from_addr }}</a>
+				<a href="#" title="someone" class="user">{{ comment.from_addr }}</a>
 
 				{% if comment.to_addr %}
 					对
@@ -25,21 +20,6 @@
 				<div class="clear"></div>
 			</li>
 		{% endfor %}	
-
-			<li class="note share">
-				<a href="http://someonesite.com" title="someone - 3小时前"><img class="avatar" src="jpg_16x16x0.jpg"></a>
-				<span class="action">
-				<a href="http:someonesite.com" title="someone - 3小时前">who</a>说： 对啊
-				</span><div class="clear"></div>
-			</li>
-			<li id="notes_loading_50" style="display:none;text-align:center;" class="note">
-				<span>加载中...</span>
-			</li>
-			<li id="more_notes_50" style="text-align:center;" class="note more_notes_link_container">
-				<a onclick="load_more_notes(event,6618021,50)" href="#" class="more_notes_link">查看更多</a>
-			</li>
-
-
 		</ol>
 	</div>
 </div>

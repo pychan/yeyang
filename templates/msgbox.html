@@ -17,19 +17,14 @@
 			<label id="helpnik"></label>
 			<input id="nikename" placeholder="选择一个昵称：必须" type="text" style="border:1px solid;height:20px">
 			<label id="helpemail"></label>
-			<input id="check_email" placeholder="您的邮箱：可选"  type="text" style="border:1px solid;height:20px">
+			<input id="email" placeholder="您的邮箱：可选"  type="text" style="border:1px solid;height:20px">
 			
 			<script>
 				$(document).ready(function(){
-						$("textarea").val("");
-					//$("#msgcommit").click(function(){
-						//{"from_addr":$.trim($("#nikename").val()),"to_addr":$("#tellwho").text(),"msg":$.trim($("textarea").val())}
-					//	alert($("#tellwho").text());
-				//	});	
+					$("textarea").val("");
 					$(".user").click(function(){
 						$("#tellwho").text("@" + $(this).text()).show();	
 						$("#xxx").show();
-						//$("textarea").val("@" + $(this).text() + ":\n");	
 						return false;
 					});
 					
@@ -40,25 +35,21 @@
 					});
 
 					$("#msgcommit").click(function(){
-						//alert($("#tellwho").text());
-						if($.trim($("#nikename").val()) == "" || $.trim($("textarea").val()) == ""){
-							
-							//$("#helpnik").text("Can't be null");
-							alert("昵称或信息不能为空的");
-						}else{
-							//here to do ajax post
-						//	alert('yes');
-							var len = $("#tellwho").text().length;
-							$.post('/post_msg/',{"atc_pk":$("#whichatc").val(),"from_addr":$.trim($("#nikename").val()),"to_addr":$("#tellwho").text().substring(1,len),"msg":$.trim($("textarea").val())},callback);
-						}
+								if($.trim($("#nikename").val()) == "" || $.trim($("textarea").val()) == ""){
+									alert("昵称或信息不能为空的");
+								}else{
+									var len = $("#tellwho").text().length;
+									$.post("/post_msg/",{"atc_pk":$("#whichatc").val(),"from_addr":$.trim($("#nikename").val()),"to_addr":$("#tellwho").text().substring(1,len),"msg":$.trim($("textarea").val())},callback_fn,"json");
+								}
 					});
 					
-					function callback(data){
-						location.reload();
-						//alert("yes");
-						//var p = "<li class='note reblog chen'>"+"<a href='#' class='user'>"+ $.trim($("#nikename").val()) +"</a>"+ "<a href='#' class='user'>"+ $("#tellwhoe").text() +"</a>" +"</li>"; 
-						//$(".chen:last").append(p);	
-						//alert(d.status);
+					function callback_fn(data){
+						alert(data.status);
+						if (data.status == "success"){
+							location.reload();
+						}else{
+							window.location.replace("/error/");
+						}
 					}
 				});				
 			</script>
