@@ -1,4 +1,5 @@
 # Django settings for yeyang project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -49,7 +50,8 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/root/yeyang/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)),'media/')
+#MEDIA_ROOT = '/root/yeyang/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -73,7 +75,9 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-	'/root/yeyang/static',
+	os.path.join(os.path.dirname(os.path.realpath(__file__)),'static'),
+	#'/root/yeyang/static',
+
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -108,7 +112,9 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'yeyang.urls'
 
 TEMPLATE_DIRS = (
-	'/root/yeyang/templates',
+	os.path.join(os.path.dirname(os.path.realpath(__file__)),'templates'),
+	#'/root/yeyang/templates',
+
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -160,4 +166,5 @@ TEMPLATE_CONTEXT_PROCESSORS = {
 	'django.core.context_processors.csrf',
 }
 
-STATIC_PATH='/root/yeyang/static'
+STATIC_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)),'static')
+#STATIC_PATH = '/root/yeyang/static'
